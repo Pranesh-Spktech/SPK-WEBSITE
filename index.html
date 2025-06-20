@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPK Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Custom animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Header -->
+    <header class="fixed w-full bg-black shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- <div class="flex items-center">
+                    <a href="#" class="text-3xl font-bold text-white">SPK Technologies</a>
+                </div> -->
+                <div class="flex items-center">
+                <a href="#" class="flex items-center text-3xl font-bold text-white">
+                    <!-- <img src="images\SPK Logo.png" alt="SPK Technologies Logo" class="h-12 w-12 mr-3"> -->
+                    SPK Technologies
+                </a>
+                </div>
+                
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#" class="relative inline-block text-white/90 hover:text-white/100 font-medium transition-opacity duration-300 group">
+                    Home
+                    <span class="absolute left-0 bottom-[-3px] h-[4px] bg-gradient-to-r from-[#7000cc] via-[#9a0fbf] to-[#ff0066] w-0 group-hover:w-full transition-all duration-400 origin-left"></span>
+                    </a>
+                    <a href="#" class="relative inline-block text-white/90 hover:text-white/100 font-medium transition-opacity duration-300 group">
+                    About Us
+                    <span class="absolute left-0 bottom-[-3px] h-[4px] bg-gradient-to-r from-[#7000cc] via-[#9a0fbf] to-[#ff0066] w-0 group-hover:w-full transition-all duration-400 origin-left"></span>
+                    </a>
+                    <a href="#" class="relative inline-block text-white/90 hover:text-white/100 font-medium transition-opacity duration-300 group">
+                    CSR
+                    <span class="absolute left-0 bottom-[-3px] h-[4px] bg-gradient-to-r from-[#7000cc] via-[#9a0fbf] to-[#ff0066] w-0 group-hover:w-full transition-all duration-400 origin-left"></span>
+                    </a>
+                    <a href="#" class="relative inline-block text-white/90 hover:text-white/100 font-medium transition-opacity duration-300 group">
+                    Software Development
+                    <span class="absolute left-0 bottom-[-3px] h-[4px] bg-gradient-to-r from-[#7000cc] via-[#9a0fbf] to-[#ff0066] w-0 group-hover:w-full transition-all duration-400 origin-left"></span>
+                    </a>
+                    <a href="#" class="relative inline-block text-white/90 hover:text-white/100 font-medium transition-opacity duration-300 group">
+                    Staff Augumentation
+                    <span class="absolute left-0 bottom-[-3px] h-[4px] bg-gradient-to-r from-[#7000cc] via-[#9a0fbf] to-[#ff0066] w-0 group-hover:w-full transition-all duration-400 origin-left"></span>
+                    </a>
+                    <a href="#" class="relative inline-block text-white/90 hover:text-white/100 font-medium transition-opacity duration-300 group">
+                    Career
+                    <span class="absolute left-0 bottom-[-3px] h-[4px] bg-gradient-to-r from-[#7000cc] via-[#9a0fbf] to-[#ff0066] w-0 group-hover:w-full transition-all duration-400 origin-left"></span>
+                    </a>
+                    <a href="#" class="relative inline-block text-white/90 hover:text-white/100 font-medium transition-opacity duration-300 group">
+                    Contact Us
+                    <span class="absolute left-0 bottom-[-3px] h-[4px] bg-gradient-to-r from-[#7000cc] via-[#9a0fbf] to-[#ff0066] w-0 group-hover:w-full transition-all duration-400 origin-left"></span>
+                    </a>
+                    <a href="#" class="bg-gradient-to-r from-[#7000cc] via-[#9a0fbf] to-[#ff0066] text-white px-6 py-2 rounded-md font-medium transition">Get Quote</a>
+                </nav>
+                
+                <button class="lg:hidden focus:outline-none">
+                    <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - Full Screen with Sliding Background -->
+<section class="relative h-screen w-full overflow-hidden">
+  <!-- Background Slides -->
+  <div class="relative h-full w-full">
+    <!-- Slide 1 -->
+    <input type="radio" name="slider" id="slide1" class="hidden" checked>
+    <div class="absolute inset-0 transition-opacity duration-1000">
+      <img src="images/singapore-img1.jpg" alt="Background 1" class="w-full h-full object-cover">
+    </div>
+    
+    <!-- Slide 2 -->
+    <input type="radio" name="slider" id="slide2" class="hidden">
+    <div class="absolute inset-0 opacity-0 transition-opacity duration-1000">
+      <img src="images/singapore-img2.jpg" alt="Background 2" class="w-full h-full object-cover">
+    </div>
+    
+    <!-- Overlay for better text visibility -->
+    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+    
+    <!-- Navigation Arrows -->
+    <label for="slide2" class="absolute left-8 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-4 rounded-full hover:bg-opacity-60 transition cursor-pointer z-20">
+      <i class="fas fa-chevron-left text-xl"></i>
+    </label>
+    <label for="slide1" class="absolute right-8 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-4 rounded-full hover:bg-opacity-60 transition cursor-pointer z-20">
+      <i class="fas fa-chevron-right text-xl"></i>
+    </label>
+  </div>
+  
+  <!-- Static Content -->
+  <div class="container mx-auto relative z-10 h-full flex items-center px-6">
+    <div class="max-w-2xl animate-fade-in">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">Your digital presence <span class="gradient-text">matters</span></h1>
+      <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
+        We help businesses elevate their value through custom digital solutions that deliver results.
+      </p>
+      <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+        <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-md text-center font-medium transition">Get Started</a>
+        <a href="#" class="flex items-center justify-center text-white hover:text-indigo-300">
+          <i class="fas fa-play-circle text-2xl mr-2"></i>
+          <span>Watch Video</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gradient-text {
+    background: linear-gradient(90deg, #6366F1, #8B5CF6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  /* CSS-only slider functionality */
+  #slide1:checked ~ div:nth-of-type(1),
+  #slide2:checked ~ div:nth-of-type(2) {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  #slide1:checked ~ div:nth-of-type(2),
+  #slide2:checked ~ div:nth-of-type(1) {
+    opacity: 0;
+    z-index: 0;
+  }
+  
+  /* Animation for content */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+</style>
+
+    <!-- Clients Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <img src="https://bootstrapmade.com/demo/templates/Groovin/assets/img/clients/client-1.png" alt="Client 1" class="h-8 opacity-60 hover:opacity-100 transition">
+                <img src="https://bootstrapmade.com/demo/templates/Groovin/assets/img/clients/client-2.png" alt="Client 2" class="h-8 opacity-60 hover:opacity-100 transition">
+                <img src="https://bootstrapmade.com/demo/templates/Groovin/assets/img/clients/client-3.png" alt="Client 3" class="h-8 opacity-60 hover:opacity-100 transition">
+                <img src="https://bootstrapmade.com/demo/templates/Groovin/assets/img/clients/client-4.png" alt="Client 4" class="h-8 opacity-60 hover:opacity-100 transition">
+                <img src="https://bootstrapmade.com/demo/templates/Groovin/assets/img/clients/client-5.png" alt="Client 5" class="h-8 opacity-60 hover:opacity-100 transition">
+                <img src="https://bootstrapmade.com/demo/templates/Groovin/assets/img/clients/client-6.png" alt="Client 6" class="h-8 opacity-60 hover:opacity-100 transition">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">About Us</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    We are a team of passionate designers, developers, and strategists dedicated to creating exceptional digital experiences.
+                </p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <img src="https://bootstrapmade.com/demo/templates/Groovin/assets/img/about.jpg" alt="About Us" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4">Who We Are</h3>
+                    <p class="text-gray-600 mb-6">
+                        Our company was founded in 2010 with the mission to help businesses thrive in the digital world. We combine creativity with technical expertise to deliver solutions that drive growth.
+                    </p>
+                    
+                    <div class="mb-8">
+                        <div class="flex items-start mb-4">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Strategic Planning</h4>
+                                <p class="text-gray-600">We develop comprehensive strategies tailored to your business goals.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start mb-4">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Creative Design</h4>
+                                <p class="text-gray-600">Our designs are not just beautiful but also highly functional.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Technical Excellence</h4>
+                                <p class="text-gray-600">We use cutting-edge technologies to build robust solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-600 mb-6">
+                        With over 500 projects completed, we have the experience and expertise to handle any challenge.
+                    </p>
+                    <a href="#" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-md font-medium transition">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Our Services</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    We offer a comprehensive range of digital services to help your business grow and succeed online.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-laptop-code text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Web Development</h3>
+                    <p class="text-gray-600 mb-4">
+                        Custom websites and web applications built with modern technologies for optimal performance.
+                    </p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium flex items-center">
+                        Read more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Mobile Apps</h3>
+                    <p class="text-gray-600 mb-4">
+                        Cross-platform mobile applications that engage users and deliver seamless experiences.
+                    </p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium flex items-center">
+                        Read more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Digital Marketing</h3>
+                    <p class="text-gray-600 mb-4">
+                        Data-driven marketing strategies to increase your online visibility and conversions.
+                    </p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium flex items-center">
+                        Read more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-paint-brush text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">UI/UX Design</h3>
+                    <p class="text-gray-600 mb-4">
+                        Intuitive and beautiful interfaces designed to enhance user engagement and satisfaction.
+                    </p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium flex items-center">
+                        Read more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-search text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">SEO Services</h3>
+                    <p class="text-gray-600 mb-4">
+                        Comprehensive SEO strategies to improve your search rankings and organic traffic.
+                    </p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium flex items-center">
+                        Read more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-cloud text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Cloud Solutions</h3>
+                    <p class="text-gray-600 mb-4">
+                        Scalable cloud infrastructure and services to support your business growth.
+                    </p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium flex items-center">
+                        Read more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-6 bg-indigo-600 text-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to grow your business?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Contact us today to discuss how we can help you achieve your digital goals.
+            </p>
+            <a href="#" class="inline-block bg-white text-indigo-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Groovin</h3>
+                    <p class="text-gray-400 mb-4">
+                        A digital agency focused on delivering exceptional results for our clients.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin text-xl"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Useful Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">About us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Our Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Web Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Product Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Marketing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Graphic Design</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Us</h4>
+                    <address class="text-gray-400 not-italic">
+                        <p class="mb-2">123 Business Avenue</p>
+                        <p class="mb-2">New York, NY 10001</p>
+                        <p class="mb-2">United States</p>
+                        <p class="mb-2"><strong>Phone:</strong> +1 234 567 890</p>
+                        <p><strong>Email:</strong> info@groovin.com</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Groovin. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="fixed bottom-8 right-8 bg-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-indigo-700 transition">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('header button.lg\\:hidden');
+            const mobileMenu = document.querySelector('header + section');
+            
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    const nav = document.querySelector('nav.lg\\:flex');
+                    if (nav) {
+                        nav.classList.toggle('hidden');
+                    }
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
