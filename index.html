@@ -79,96 +79,131 @@
         </div>
     </header>
 
-    <!-- Hero Section - Full Screen with Sliding Background -->
-<section class="relative h-screen w-full overflow-hidden">
-  <!-- Background Slides -->
-  <div class="relative h-full w-full">
-    <!-- Slide 1 -->
-    <input type="radio" name="slider" id="slide1" class="hidden" checked>
-    <div class="absolute inset-0 transition-opacity duration-1000">
-      <img src="images/singapore-img1.jpg" alt="Background 1" class="w-full h-full object-cover">
-    </div>
-    
-    <!-- Slide 2 -->
-    <input type="radio" name="slider" id="slide2" class="hidden">
-    <div class="absolute inset-0 opacity-0 transition-opacity duration-1000">
-      <img src="images/singapore-img2.jpg" alt="Background 2" class="w-full h-full object-cover">
-    </div>
-    
-    <!-- Overlay for better text visibility -->
-    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
-    
-    <!-- Navigation Arrows -->
-    <label for="slide2" class="absolute left-8 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-4 rounded-full hover:bg-opacity-60 transition cursor-pointer z-20">
-      <i class="fas fa-chevron-left text-xl"></i>
-    </label>
-    <label for="slide1" class="absolute right-8 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-4 rounded-full hover:bg-opacity-60 transition cursor-pointer z-20">
-      <i class="fas fa-chevron-right text-xl"></i>
-    </label>
-  </div>
-  
-  <!-- Static Content -->
-  <div class="container mx-auto relative z-10 h-full flex items-center px-6">
-    <div class="max-w-2xl animate-fade-in">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">Your digital presence <span class="gradient-text">matters</span></h1>
-      <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
-        We help businesses elevate their value through custom digital solutions that deliver results.
-      </p>
-      <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-        <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-md text-center font-medium transition">Get Started</a>
-        <a href="#" class="flex items-center justify-center text-white hover:text-indigo-300">
-          <i class="fas fa-play-circle text-2xl mr-2"></i>
-          <span>Watch Video</span>
-        </a>
+
+    <!-- Hero Section -->
+<section class="relative h-screen w-full overflow-hidden bg-gray-900">
+  <!-- Slide Controls -->
+  <input type="radio" name="slider" id="slide1" class="hidden peer/slide1" checked>
+  <input type="radio" name="slider" id="slide2" class="hidden peer/slide2">
+
+  <!-- Indicator Lines -->
+<div class="absolute bottom-6 left-0 right-0 flex justify-center gap-3 z-30">
+  <label for="slide1" class="h-1 w-8 rounded-full bg-gray-500 peer-checked/slide1:bg-white transition-all duration-300 cursor-pointer"></label>
+  <label for="slide2" class="h-1 w-8 rounded-full bg-gray-500 peer-checked/slide2:bg-white transition-all duration-300 cursor-pointer"></label>
+</div>
+
+
+  <!-- ✅ Wrap slides in a .slides div so CSS works -->
+  <div class="relative h-full w-full overflow-hidden slides">
+<!-- Slide 1 -->
+<div class="absolute inset-0 slide transition-all duration-700 ease-in-out">
+  <!-- Blurred Background -->
+  <img src="images/singapore-img1.jpg"
+       class="absolute inset-0 w-full h-full object-cover blur-sm scale-105 z-0"
+       alt="Slide 1 Background" />
+
+  <!-- Overlayed Content -->
+  <div class="absolute inset-0 flex items-center justify-center px-6 md:px-12 z-10">
+    <div class="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl gap-8">
+      <!-- Left: Text -->
+      <div class="text-white md:w-1/2 text-left">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4">Software Development</h1>
+        <p class="text-base md:text-lg text-gray-200 mb-6">
+        SPK Technologies excels in Software Development, delivering custom-built solutions that align with your business objectives and enhance performance. Our expert team leverages the latest technologies and agile methodologies to create scalable, secure, and user-centric applications that drive growth and innovation.
+        </p>
+      </div>
+      <!-- Right: Image -->
+      <div class="md:w-1/2">
+        <img src="images/sample-img1.png" alt="Development Image"
+        class="rounded-lg w-full max-w-xl mx-auto opacity-90 brightness-90 saturate-75 mix-blend-lighten backdrop-blur-sm shadow-none" />
       </div>
     </div>
   </div>
+</div>
+
+
+<!-- Slide 2 -->
+<div class="absolute inset-0 slide transition-all duration-700 ease-in-out">
+  <!-- Blurred Background -->
+  <img src="images/singapore-img3.jpg"
+       class="absolute inset-0 w-full h-full object-cover blur-sm scale-105 z-0"
+       alt="Slide 2 Background" />
+
+  <!-- Overlayed Content -->
+  <div class="absolute inset-0 flex items-center justify-center px-6 md:px-12 z-10">
+    <div class="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl gap-8">
+      <!-- Left: Image -->
+      <div class="md:w-1/2">
+        <img src="images/sample-img8.png" alt="Development Image"
+            class="rounded-lg shadow-lg w-full max-w-xl mx-auto transform scale-x-[-1]">
+
+      </div>
+      <!-- Right: Text -->
+      <div class="text-white md:w-1/2 text-left">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4">Outsourcing</h1>
+        <p class="text-base md:text-lg text-white mb-6">
+        SPK Technologies specializes in IT staffing and outsourcing services to help businesses access top talent and scale their teams efficiently. Our tailored solutions ensure that you have the right expertise at the right time, whether for short-term projects or long-term strategic initiatives, enabling seamless operations and enhanced productivity.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-30 z-0"></div>
+
+  <!-- Arrows -->
+  <div class="absolute inset-0 flex items-center justify-between px-6 z-20">
+    <label for="slide1" class="bg-white bg-opacity-20 hover:bg-opacity-40 text-white p-3 rounded-full cursor-pointer">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+      </svg>
+    </label>
+    <label for="slide2" class="bg-white bg-opacity-20 hover:bg-opacity-40 text-white p-3 rounded-full cursor-pointer">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </label>
+  </div>
 </section>
 
+
 <style>
-  .gradient-text {
-    background: linear-gradient(90deg, #6366F1, #8B5CF6);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  
-  /* CSS-only slider functionality */
-  #slide1:checked ~ div:nth-of-type(1),
-  #slide2:checked ~ div:nth-of-type(2) {
-    opacity: 1;
-    z-index: 1;
-  }
-  
-  #slide1:checked ~ div:nth-of-type(2),
-  #slide2:checked ~ div:nth-of-type(1) {
+  .slide {
+    transform: translateX(100%);
     opacity: 0;
     z-index: 0;
   }
-  
-  /* Animation for content */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+
+  /* Active Slide 1 */
+  #slide1:checked ~ .slides .slide:nth-child(1) {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 10;
   }
-  .animate-fade-in {
-    animation: fadeIn 1s ease-out forwards;
+
+  #slide1:checked ~ .slides .slide:nth-child(2) {
+    transform: translateX(100%);
+  }
+
+  /* Active Slide 2 */
+  #slide2:checked ~ .slides .slide:nth-child(1) {
+    transform: translateX(-100%);
+  }
+
+  #slide2:checked ~ .slides .slide:nth-child(2) {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 10;
   }
 </style>
 
-    <!-- Clients Section -->
-    <section class="py-12 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-                <img src="https://bootstrapmade.com/demo/templates/Groovin/assets/img/clients/client-1.png" alt="Client 1" class="h-8 opacity-60 hover:opacity-100 transition">
-                <img src="https://bootstrapmade.com/demo/templates/Groovin/assets/img/clients/client-2.png" alt="Client 2" class="h-8 opacity-60 hover:opacity-100 transition">
-                <img src="https://bootstrapmade.com/demo/templates/Groovin/assets/img/clients/client-3.png" alt="Client 3" class="h-8 opacity-60 hover:opacity-100 transition">
-                <img src="https://bootstrapmade.com/demo/templates/Groovin/assets/img/clients/client-4.png" alt="Client 4" class="h-8 opacity-60 hover:opacity-100 transition">
-                <img src="https://bootstrapmade.com/demo/templates/Groovin/assets/img/clients/client-5.png" alt="Client 5" class="h-8 opacity-60 hover:opacity-100 transition">
-                <img src="https://bootstrapmade.com/demo/templates/Groovin/assets/img/clients/client-6.png" alt="Client 6" class="h-8 opacity-60 hover:opacity-100 transition">
-            </div>
-        </div>
-    </section>
+
+
+
+
 
     <!-- About Section -->
     <section class="py-20 px-6 bg-white">
@@ -228,7 +263,7 @@
     <section class="py-20 px-6 bg-gray-50">
         <div class="container mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4">Our Services</h2>
+                <h2 class="text-3xl font-bold mb-4">CSR</h2>
                 <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
                 <p class="text-gray-600 max-w-2xl mx-auto">
                     We offer a comprehensive range of digital services to help your business grow and succeed online.
@@ -386,9 +421,9 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#" class="fixed bottom-8 right-8 bg-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-indigo-700 transition">
+    <!-- <a href="#" class="fixed bottom-8 right-8 bg-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-indigo-700 transition">
         <i class="fas fa-arrow-up"></i>
-    </a>
+    </a> -->
 
     <!-- Mobile Menu Script -->
     <script>
